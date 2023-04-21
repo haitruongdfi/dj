@@ -22,7 +22,7 @@ from article.views import ArticleView, CommentView
 
 # this snippet to check Sentry.io
 def trigger_error1(request):
-    division_by_zero = 1 / 0
+    1 / 0
 
 
 def trigger_error2(request):
