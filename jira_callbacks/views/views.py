@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
+import json, time
 
 
 # Create your views here.
@@ -14,7 +15,11 @@ class ShowJiraInfo(APIView):
 
     def post(self, request, format=None):
         print("===============")
-        print(request.data)
+        file_name = f"result{round(time.time())}.json"
+        with open(file_name, "a") as f:
+            f.write(json.dumps(request.data, indent=4))
+            # f.write("==========end of each request=========")
+
         print("===============")
         return Response(
             {"message": "OK"},
