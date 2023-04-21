@@ -30,6 +30,5 @@ jobs:
         DJ_SECRET_KEY: ${{ env.DJ_SECRET_KEY }}
       run: |
         black --check .
-        isort --check .
+        isort --check --profile black .
         autoflake -r --check --remove-all-unused-imports --ignore-init-module-imports --remove-unused-variables --exclude venv .
-        python manage.py runserver
