@@ -32,4 +32,3 @@ jobs:
         black --check .
         isort --check --profile black .
         autoflake -r --check --remove-all-unused-imports --ignore-init-module-imports --remove-unused-variables --exclude venv .
-        python manage.py runserver
