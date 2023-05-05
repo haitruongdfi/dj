@@ -163,8 +163,9 @@ class ShowJiraInfo(APIView):
         # get data from Jira Automation
         try:
             with open(
-                f"csv/jira_time_spent{round(time.time())}.csv",
-                mode="w",
+                # f"csv/jira_time_spent{round(time.time())}.csv",
+                f"csv/jira_time_spent.csv",
+                mode="a",
                 encoding="utf-8",
                 newline="",
             ) as csvfile:
